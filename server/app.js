@@ -2,6 +2,7 @@ import 'dotenv/config.js';
 import express from "express";
 import bodyParser from "body-parser";
 import axios from "axios";
+import cors from "cors";
 import routes from "./src/routes/index.js";
 import middlewares from './src/middlewares/index.js';
 
@@ -12,6 +13,7 @@ const app = express();
 const middlw = middlewares();
 const PORT = process.env.PORT || 5000;
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
