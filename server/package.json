@@ -4,9 +4,10 @@
   "description": "Express backend",
   "author": "",
   "license": "ISC",
-  "main": "index.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
+    "faker": "node scripts/faker-pets.js",
     "start": "nodemon app.js",
     "test": "npm run eslint & jest --coverage",
     "test:watch": "jest --watchAll",
@@ -16,10 +17,14 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.16.8",
+    "@faker-js/faker": "^6.3.1",
     "eslint": "^8.6.0",
-    "jest": "^27.4.7"
+    "jest": "^27.4.7",
+    "nodemon": "^2.0.16",
+    "supertest": "^6.2.3"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "body-parser": "^1.19.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
