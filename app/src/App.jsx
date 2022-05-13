@@ -1,4 +1,4 @@
-import CatsList from './components/Cats/CatDetails.jsx';
+import CatsList from './components/Cats/CatList.jsx';
 import usePets from './hooks/usePets.js';
 
 
