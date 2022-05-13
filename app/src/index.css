@@ -12,7 +12,73 @@ code {
     monospace;
 }
 
+.app-container {
+  padding: 10px;
+}
+
 .flex-wrap {
   display: flex;
   flex-wrap: wrap;
+}
+
+.todo-board {
+  min-width: 550px;
+  margin: 0 auto;
+}
+
+.todo-board__content {
+  padding: 0.5rem;
+  background-color: #fafafa;
+  border-radius: 0.25rem;
+}
+
+.todo-fetch {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.todo-fetch__button {
+  cursor: pointer;
+}
+
+.todo-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.todo-card {
+  padding: 10px;
+  max-width: 250px;
+  min-width: 200px;
+  margin: 0 auto;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.todo-card__title {
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-card__text {
+  padding-left: 2px;
+  padding-right: 2px;
+  font-size: 1rem;
+  color: #666;
+}
+
+.todo-card__status {
+  padding: 0.1rem;
+  margin: 1px;
+  font-size: .7rem;
+  color: #666;
+  background-color: aquamarine;
+  border-radius: 10px;
 }

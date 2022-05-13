@@ -7,7 +7,7 @@ export default function (props) {
         return <CatDetails key={id} cat={cat} />
     }
 
-    return <div className="flex-wrap">
+    return <div id="cat-list" className="flex-wrap">
         {props.cats.map(renderCatDetails)}
     </div>
 }
