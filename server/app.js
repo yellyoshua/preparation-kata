@@ -5,6 +5,9 @@ import axios from "axios";
 import cors from "cors";
 import routes from "./src/routes/index.js";
 import middlewares from './src/middlewares/index.js';
+import configureServices from './src/services/index.js';
+
+const services = configureServices();
 
 const API_URL = process.env.API_URL;
 
@@ -17,7 +20,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-routes(app, { axios });
+routes(app, { axios, services });
 app.use(middlw.errorsMiddleware);
 
 app.listen(PORT, () => {

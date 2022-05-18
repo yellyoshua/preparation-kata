@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className='app-container'>
-      <CatsList cats={cats} />
+      {/* <CatsList cats={cats} /> */}
       <ToDoBoard/>
     </div>
   )

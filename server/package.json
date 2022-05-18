@@ -8,6 +8,7 @@
   "type": "module",
   "scripts": {
     "faker": "node scripts/faker-pets.js",
+    "api": "npx serve public -l 8080",
     "start": "nodemon app.js",
     "test": "npm run eslint & jest --coverage",
     "test:watch": "jest --watchAll",
