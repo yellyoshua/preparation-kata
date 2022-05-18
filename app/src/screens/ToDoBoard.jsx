@@ -7,7 +7,7 @@ import Modal from "./Modal";
 
 export default function ToDoBoard() {
     const [showAddToDoForm, setShowAddToDoForm] = useState(false);
-    const { todos, loading, fetchTodos, addTodo } = useTodoBoard();
+    const { loading, addTodo } = useTodoBoard();
 
     const handleCloseAddToDoForm = () => setShowAddToDoForm(false)
 
@@ -26,7 +26,7 @@ export default function ToDoBoard() {
             </div>
             <div className="container">
                 <Loading isLoading={loading}>
-                    <ToDoList todos={todos} fetchTodos={fetchTodos} />
+                    <ToDoList />
                 </Loading>
             </div>
             <Modal show={showAddToDoForm} onClose={handleCloseAddToDoForm} title="Add todo task">

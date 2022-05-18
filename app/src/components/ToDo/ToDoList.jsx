@@ -1,6 +1,8 @@
 import ToDoCard from "./ToDoCard"
+import useTodoBoard from "../../hooks/useTodoBoard";
 
-export default function ToDoList({ todos = [], fetchTodos }) {
+export default function ToDoList() {
+    const { todos, fetchTodos } = useTodoBoard();
     return (
         <div className="grid justify-center">
                 <button
@@ -8,7 +10,7 @@ export default function ToDoList({ todos = [], fetchTodos }) {
                     onClick={fetchTodos}
                 >Fetch ToDos</button>
             <div
-                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2"
+                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 pt-3"
             >
                 {todos.map((todo, i) => {
                     return (
