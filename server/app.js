@@ -6,15 +6,22 @@ import cors from "cors";
 import routes from "./src/routes/index.js";
 import middlewares from './src/middlewares/index.js';
 import configureServices from './src/services/index.js';
-
-const services = configureServices();
+import configureDatabase from './src/repository/db.js';
+import repository from './src/repository/index.js';
+import { PetsModel } from './src/models/index.js';
 
 const API_URL = process.env.API_URL;
+const DATABASE_URI = process.env.DATABASE_URI;
+const PORT = process.env.PORT || 5000;
 
+const services = configureServices({
+    petsRepository: repository(PetsModel),
+});
+const db = configureDatabase(DATABASE_URI);
 axios.defaults.baseURL = API_URL;
+
 const app = express();
 const middlw = middlewares();
-const PORT = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -23,8 +30,20 @@ app.use(bodyParser.urlencoded({ extended: true }));
 routes(app, { axios, services });
 app.use(middlw.errorsMiddleware);
 
-app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
-});
+
+function startServer() {
+    console.log("Connected to MongoDB");
+    app.listen(PORT, () => {
+        console.log(`Server listening on port ${PORT}`);
+    });
+}
+
+function onErrorConnection(err) {
+    console.log(err);
+}
+
+db.connect()
+    .then(startServer)
+    .catch(onErrorConnection);
 
 export default app;

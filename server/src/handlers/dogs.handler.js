@@ -1,10 +1,18 @@
-export default ({ axios }) => ({
-    async getDogs(req, res, next) {
-        try {
-            const response = await axios.get("/dogs-content.json");
-            res.status(200).json({ data: response.data.data });
-        } catch (error) {
-            next(error);
+export default ({ axios, services }) => {
+    const {
+        petsService,
+    } = services;
+
+    return {
+        async getDogs(req, res, next) {
+            try {
+                const pets = await petsService.getPetsByType(
+                    "dog"
+                );
+                res.status(200).json({ data: pets });
+            } catch (error) {
+                next(error);
+            }
         }
-    }
-})
+    };
+}

@@ -3,7 +3,7 @@ import dogsHandler from "./dogs.handler.js";
 import todosHandler from "./todos.handler.js";
 
 export default ({axios, services}) => ({
-    catsHandler: catsHandler({axios}),
-    dogsHandler: dogsHandler({axios}),
+    catsHandler: catsHandler({axios, services}),
+    dogsHandler: dogsHandler({axios, services}),
     todosHandler: todosHandler({axios, services}),
 });

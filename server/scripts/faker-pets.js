@@ -33,10 +33,5 @@ const generateCats = (n_cats) => {
     }
     return cats;
 }
-(() => {
-    const cats = generateCats(100);
-    const dogs = generateDogs(100);
 
-    fs.writeFileSync("public/cats-content.json", JSON.stringify({ data: cats}, null, 2));
-    fs.writeFileSync("public/dogs-content.json", JSON.stringify({ data: dogs}, null, 2));
-})()
+export { generateDogs, generateCats };
