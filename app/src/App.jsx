@@ -1,12 +1,5 @@
 import AppRouter from './Routes/index.jsx';
 
-
-function App() {
-  return (
-    <div className='app-container'>
-      <AppRouter/>
-    </div>
-  )
+export default function App() {
+  return <AppRouter/>
 }
-
-export default App
