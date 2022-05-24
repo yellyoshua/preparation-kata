@@ -8,7 +8,7 @@ export default function PetsList({ pets = [] }) {
         />
     }
 
-    return <div id="pet-list" className="columns-1 sm:columns-2 md:columns-3 lg:columns-3 box-border mx-auto">
+    return <div id="pet-list" className="columns-1 sm:columns-2 md:columns-3 lg:columns-3 box-border mx-auto px-3">
         {pets.map(renderPetDetails)}
     </div>
 }

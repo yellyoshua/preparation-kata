@@ -18,7 +18,7 @@ export default function AppRouter() {
                         <HomeScreen />
                     </Layout>
                 } />
-                <Route path="/todo" element={
+                <Route path="/todos" element={
                     <Layout>
                         <ToDoScreen />
                     </Layout>

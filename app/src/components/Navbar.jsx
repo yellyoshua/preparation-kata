@@ -11,7 +11,7 @@ export default function Navbar() {
                 </div>
                 <div className="w-full flex-grow flex md:w-auto">
                     <div className="text-sm md:flex-grow">
-                        <Link to="/todo" className="mt-4 inline-block md:mt-0 text-teal-200 hover:text-white mr-4">
+                        <Link to="/todos" className="mt-4 inline-block md:mt-0 text-teal-200 hover:text-white mr-4">
                             ToDo
                         </Link>
                         <Link to="/dogs" className="mt-4 inline-block md:mt-0 text-teal-200 hover:text-white mr-4">
