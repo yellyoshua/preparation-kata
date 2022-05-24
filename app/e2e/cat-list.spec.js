@@ -6,7 +6,8 @@ test.beforeEach(async ({ page }) => {
 
 test.describe("cat list", async () => {
     test("should show the cat list", async ({ page }) => {
-        const catList = await page.waitForSelector('#cat-list');
+        await page.goto("/cats");
+        const catList = await page.waitForSelector('#pet-list');
         expect(catList).toBeTruthy();
     });
 });
